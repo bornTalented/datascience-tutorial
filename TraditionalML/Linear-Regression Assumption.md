@@ -132,10 +132,6 @@ This is common in time series data (e.g., sales by month), where residuals show 
 
 ---
 
-Let me know if you want **code snippets or visual plots** for any of these!
-
----
-
 Great — here's a **complete working Python example** using **scikit-learn** and **statsmodels** to train a linear regression model and **validate all five assumptions** using appropriate **diagnostic tools**.
 
 ---
@@ -152,7 +148,7 @@ Detect violations of:
 
 ---
 
-## ✅ **1. Setup: Load Data & Train Model**
+## **1. Setup: Load Data & Train Model**
 
 We'll use the Boston Housing dataset (you can replace it with any dataset).
 
@@ -193,7 +189,7 @@ residuals = y_test - y_pred
 
 ---
 
-## ✅ **2. Assumption Checks**
+## **2. Assumption Checks**
 
 ---
 
@@ -322,15 +318,7 @@ print(f'Durbin-Watson: {dw}')
 
 ---
 
-Let me know if you’d like a **notebook version**, or want to run this on a **custom dataset** like CSV input.
-
----
-
 Absolutely! Below is a detailed guide for **each assumption check** in **linear regression**, listing:
-
-* ✅ All **available methods** (visual + statistical),
-* 🔍 **When to use** them,
-* ⚙️ **How to implement** each in Python.
 
 ---
 

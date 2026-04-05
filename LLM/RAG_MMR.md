@@ -68,9 +68,9 @@ MMR avoids showing duplicates by penalizing very similar results.
 retriever = vectorstore.as_retriever(
     search_type="mmr",
     search_kwargs={
-        "k": 10,
-        "fetch_k": 25,  # fetch candidates
-        "lambda_mult": 0.5  # balance between relevance and diversity
+        "k": 10, # Final number of documents returned
+        "fetch_k": 25,  # Number of initial candidates fetched before filtering
+        "lambda_mult": 0.5  # balance between relevance(1) and diversity(0)
     }
 )
 ```
@@ -276,12 +276,11 @@ We'll assume similar logic for other pairs. The critical point is that highly re
 
 MMR Formula:
 
-MMR(Di​)=λ⋅Sim1​(Di​,Q)−(1−λ)⋅maxDj​∈R​Sim2​(Di​,Dj​)
+$$\text{MMR}(D_i) = \lambda \cdot \text{Sim}_1(D_i, Q) - (1 - \lambda) \cdot \max_{D_j \in R} \text{Sim}_2(D_i, D_j)$$
 
 Given λ=0.7:
 
-MMR(Di​)=0.7⋅Sim1​(Di​,Q)−0.3⋅maxDj​∈R​Sim2​(Di​,Dj​)
-
+$$\text{MMR}(D_i) = (0.7) \cdot \text{Sim}_1(D_i, Q) - (0.3) \cdot \max_{D_j \in R} \text{Sim}_2(D_i, D_j)$$
 ---
 
 **Step-by-Step Working:**

@@ -114,3 +114,4 @@ Extra Trees can be a good choice when:
 * You want a model that is less sensitive to noise or irrelevant features.
 
 While Extra Trees might introduce a bit more bias compared to Random Forests, its ability to significantly reduce variance often makes it a very competitive and effective algorithm for both classification and regression tasks.
+

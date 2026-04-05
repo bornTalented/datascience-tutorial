@@ -13,24 +13,24 @@ Combines Multiple Search Techniques:
 Steps:
 
 1. Documents are encoded as:
-
-   * **Dense Vectors** (for semantic search)
-   * **Sparse Matrix** (for keyword search)
+	
+	* **Dense Vectors** (for semantic search)
+	* **Sparse Matrix** (for keyword search)
 
 2. User query is also embedded in both forms:
 
-   * **Dense** for semantic similarity
-   * **Sparse** for keyword overlap
+	* **Dense** for semantic similarity
+	* **Sparse** for keyword overlap
 
 3. Perform two types of retrieval:
-
-   * **Vector Search** → returns `Result_k1`
-   * **Keyword Search** → returns `Result_k2`
+	
+	* **Vector Search** → returns `Result_k1`
+	* **Keyword Search** → returns `Result_k2`
 
 4. Merge both result sets using:
 
-   * **Rank Fusion** or
-   * **Weighted Heuristics**
+	* **Rank Fusion** or
+	* **Weighted Heuristics**
 
 5. Pass merged documents to the LLM for final **response generation**.
 
@@ -41,8 +41,8 @@ Steps:
 	
 	* Input text documents (D1, D2, ..., Dn) are converted into **dense embedding vectors** using models like:
 		* OpenAI Embeddings (e.g. `text-embedding-3-small`, `text-embedding-3-large` and `text-embedding-ada-002`)
-		* Hugging Face Transformers (e.g., `all-MiniLM-L6`)
-		* Ollama Embeddings
+		* Hugging Face Transformers (e.g., `all-MiniLM-L6-v2`, `bge-base-en-v1.5`)
+		* Ollama Embeddings (e.g. `nomic-embed-text`, `mxbai-embed-large`, `all-minilm`)
 	
 	### 📤 Storage
 	

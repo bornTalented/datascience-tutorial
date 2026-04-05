@@ -2,7 +2,8 @@
 
 Transformers **do not have recurrence** (like RNNs) or **convolutions** (like CNNs), which traditionally help capture the order of words in a sequence.
 
-But **word order is critical** in natural language. For example:
+But **word order is critical** in natural language. 
+For example:
 
 * "The cat sat on the mat" ≠ "The mat sat on the cat"
 

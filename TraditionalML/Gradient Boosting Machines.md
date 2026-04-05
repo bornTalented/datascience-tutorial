@@ -71,7 +71,7 @@ Popular implementations of GBMs include **XGBoost**, **LightGBM**, and **CatBoos
 
 ---
 
-Yes, absolutely! Let's walk through a dummy example of Gradient Boosting for a regression problem (predicting a continuous value).
+Let's walk through a dummy example of Gradient Boosting for a regression problem (predicting a continuous value).
 
 **Scenario:** We want to predict a person's **Age** based on their **Years of Education**.
 
@@ -148,7 +148,7 @@ Yes, absolutely! Let's walk through a dummy example of Gradient Boosting for a r
 **Iteration 2: Building Tree 2**
 
 1.  **Calculate New Residuals ($r_2$):**
-    `Actual Age - Current Model's Prediction ($F_1(X)$)`
+    `Actual Age - Current Model's Prediction` ($F_1(X)$)
     * Person 1: $30 - 38.06 = -8.06$
     * Person 2: $35 - 38.06 = -3.06$
     * Person 3: $40 - 38.06 = 1.94$
@@ -186,7 +186,7 @@ Yes, absolutely! Let's walk through a dummy example of Gradient Boosting for a r
 **Iteration 3: Building Tree 3**
 
 1.  **Calculate New Residuals ($r_3$):**
-    `Actual Age - Current Model's Prediction ($F_2(X)$)`
+    `Actual Age - Current Model's Prediction` ($F_2(X)$)
     * Person 1: $30 - 37.504 = -7.504$
     * Person 2: $35 - 37.504 = -2.504$
     * Person 3: $40 - 38.431 = 1.569$
@@ -237,7 +237,7 @@ If we continued for many more iterations (e.g., `n_estimators=100` or `200`) and
 
 ---
 
-Absolutely! Let's walk through a dummy example of Gradient Boosting for a **binary classification problem**.
+Let's walk through a dummy example of Gradient Boosting for a **binary classification problem**.
 
 **Scenario:** We want to predict if a customer will **Buy a Product** (Yes/No) based on their **Income**.
 

@@ -5,6 +5,7 @@ The **three core transformer architectures**—**encoder-only**, **decoder-only*
 ### 1. Encoder-Only Architecture
 
 Used For: **Understanding** tasks (e.g., classification, named entity recognition, sentence embeddings)
+Masked Language Modeling (MLM)
 
 * The encoder processes the **entire input sequence** and produces contextualized embeddings.
 * **Self-attention** is **bidirectional**, meaning it attends to both left and right contexts.
@@ -12,6 +13,11 @@ Used For: **Understanding** tasks (e.g., classification, named entity recognitio
 
 * Good at capturing **context** and **semantics** of the input.
 * Not suitable for text generation.
+
+#### Good use cases:
+- Sentiment analysis
+- Named entity recognition
+- Word classification
 
 #### Examples:
 
@@ -27,6 +33,7 @@ Used For: **Understanding** tasks (e.g., classification, named entity recognitio
 ### 2. Decoder-Only Architecture
 
 Used For: **Generation** tasks (e.g., text generation, code generation, chatbots)
+Causal Language Modeling (CLM)
 
 * Takes a **prompt** as input and generates the output sequence **token by token**.
 * Self-attention is **causal (unidirectional)**—a token can only attend to previous tokens.
@@ -36,6 +43,10 @@ Used For: **Generation** tasks (e.g., text generation, code generation, chatbots
 * Excellent at **auto-regressive generation**.
 * No encoder block; it learns to predict the next token.
 
+#### Good use cases:
+- Text generation
+- Other emergent behavior
+	- Depends on model size
 #### Examples:
 
 | Model                        | Description                                |
@@ -58,6 +69,11 @@ Used For: **Transformation** tasks (e.g., machine translation, summarization, qu
 
 * Ideal for **input-output mappings** where the output depends heavily on the input.
 * Uses **teacher forcing** during training (ground-truth fed into decoder).
+
+#### Good use cases:
+- Translation
+- Text summarization
+- Question answering
 
 #### Examples:
 

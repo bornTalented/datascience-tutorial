@@ -133,15 +133,13 @@ results = faiss_index.similarity_search_by_vector(query_embedding)
 If you're building an app with LangChain, it abstracts away a lot of the complexity—many vector stores and embedding models are plug-and-play.
 
 ---
-#### How the query vector is used internally to get the most relevant vectors in the Vector DB.
+### How the query vector is used internally to get the most relevant vectors in the Vector DB.
 
 Internally, vector databases use **Approximate Nearest Neighbor (ANN)** search algorithms to compare the **query vector** to the **stored vectors** and return the most relevant ones based on **vector similarity**.
 
 Let’s break this down:
 
----
-
-## Step-by-Step: How Query Vector Retrieval Works
+Step-by-Step: How Query Vector Retrieval Works
 
 #### Step 1. Query → Embedding (Vector)
 
@@ -156,8 +154,9 @@ query_embedding = [0.12, -0.34, 0.56, ..., 0.78]
 The vector DB compares the `query_embedding` to stored vectors using a similarity/distance metric:
 
 * **Cosine similarity** (most common for semantic similarity)
-* **Euclidean distance (L2 norm)**
 * **Dot product** (especially with normalized vectors)
+* **Euclidean distance (L2 norm)**
+
 
 **Cosine similarity** formula:
 
@@ -608,10 +607,6 @@ Would you like:
 3. Or an example using **FAISS with different metrics**?
 
 Let me know how you'd like to explore this further.
-
-
-##### I have heard about MMR, is it also an alternative?
-> **MMR (Maximal Marginal Relevance)** is not a *distance metric* like cosine or dot product, but it **enhances vector search** by combining **relevance and diversity** during retrieval.
 
 ----
 Would you like a simple notebook example using OpenAI + FAISS or Pinecone to demonstrate the full flow?

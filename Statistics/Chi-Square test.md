@@ -88,6 +88,7 @@ The most common variants of the Pearson's Chi-Square test are for "Goodness-of-F
         * **Categorical Variable 2:** Coffee Preference (Brand X, Other)
 
         **Observed Frequencies:**
+
         | Education Level | Brand X | Other | Row Total |
         | :-------------- | :------ | :---- | :-------- |
         | High School     | 50      | 80    | 130       |

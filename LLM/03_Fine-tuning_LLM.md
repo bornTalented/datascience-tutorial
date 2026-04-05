@@ -76,6 +76,7 @@ where:
 ### 4. Prefix / Prompt Tuning
 
 Inject learnable prompts or tokens **without modifying model weights**.
+Learn **special tokens (embeddings)** prepended to input.
 
 **Types:**
 * **Prefix Tuning:** Train a continuous embedding prefix to guide attention.
@@ -91,6 +92,7 @@ Inject learnable prompts or tokens **without modifying model weights**.
 		Prompt-tuning GPT-3 for question answering in a finance domain.
 
 ---
+
 
 ### Comparison Table
 

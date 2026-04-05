@@ -181,7 +181,7 @@ Training approaches that improve **retriever model quality**:
 #### ⚙️ Efficient Retrieval Infrastructure
 
 * ***Approximate Nearest Neighbor (ANN) Search**
-  * Scalable vector search using tools like **FAISS**, **ScaNN**, **HNSW**, **Milvus**, etc.
+	* Scalable vector search using tools like **FAISS**, **ScaNN**, **HNSW**, **Milvus**, etc.
 
 ---
 

@@ -324,18 +324,27 @@ Now, we split the dataset based on the "Outlook" attribute:
 
 **The Final Decision Tree (Simplified Visual):**
 
-```
-                  [Root Node]
-                      Outlook
-                     /   |   \
-                  /      |     \
-          Sunny (3 No, 2 Yes) Overcast (4 Yes, 0 No)  Rain (3 Yes, 2 No)
-            |                 |                     |
-     (Split by Humidity)  (Leaf: Yes)         (Split by Wind)
-       /        \                          /          \
-  Humidity=High   Humidity=Normal    Wind=Weak     Wind=Strong
-       |               |                |             |
- (Leaf: No)      (Leaf: Yes)      (Leaf: Yes)   (Leaf: No)
+```mermaid
+graph TD
+    A["Outlook"]
+
+    A --> B["Sunny (3 No, 2 Yes)"]
+    A --> C["Overcast (4 Yes, 0 No)"]
+    A --> D["Rain (3 Yes, 2 No)"]
+
+    B --> E["Humidity = High"]
+    B --> F["Humidity = Normal"]
+
+    E --> G["Leaf: No"]
+    F --> H["Leaf: Yes"]
+
+    C --> I["Leaf: Yes"]
+
+    D --> J["Wind = Weak"]
+    D --> K["Wind = Strong"]
+
+    J --> L["Leaf: Yes"]
+    K --> M["Leaf: No"]
 ```
 
 **How to make a prediction:**
@@ -496,20 +505,23 @@ This node is also not pure, so we split further by "Number of Rooms".
 
 **The Final Regression Decision Tree (Simplified Visual):**
 
-```
-                  [Root Node]
-                 Size <= 1050 sq ft?
-                     /       \
-                  /             \
-        Yes (Size <= 1050)      No (Size > 1050)
-        Mean Price = 166.67     Mean Price = 242
-            |                       |
-   (Split by Number of Rooms)  (Split by Number of Rooms)
-       /          \                 /          \
-  Rooms = 2      Rooms = 3      Rooms = 3      Rooms = 4
-  (2 samples)    (1 sample)     (2 samples)    (3 samples)
-       |             |             |             |
-  [Predict 155]   [Predict 190] [Predict 210] [Predict 263.33]
+```mermaid
+graph TD
+    A["Size <= 1050 sq ft?"]
+
+    A -->|Yes| B["Size <= 1050<br/>Mean Price = 166.67"]
+    A -->|No| C["Size > 1050<br/>Mean Price = 242"]
+
+    B --> D["Rooms = 2 (2 samples)"]
+    B --> E["Rooms = 3 (1 sample)"]
+
+    C --> F["Rooms = 3 (2 samples)"]
+    C --> G["Rooms = 4 (3 samples)"]
+
+    D --> H["Predict 155"]
+    E --> I["Predict 190"]
+    F --> J["Predict 210"]
+    G --> K["Predict 263.33"]
 ```
 
 **How to make a prediction for a new house:**
@@ -706,16 +718,19 @@ Comparing the Information Gains:
 
 **The Final Decision Tree (Simplified Visual):**
 
-```
-                  [Root Node]
-                 Marital Status
-                     /   |   \
-                  /      |     \
-          Single (4 No) Married (4 Yes) Divorced (2 Yes)
-            |                 |                     |
-        (Leaf: No)        (Leaf: Yes)           (Leaf: Yes)
-```
+```mermaid
+graph TD
+A["Marital Status"]
 
+A --> B["Single (4 No)"]
+A --> C["Married (4 Yes)"]
+A --> D["Divorced (2 Yes)"]
+
+B --> E["Leaf: No"]
+C --> F["Leaf: Yes"]
+D --> G["Leaf: Yes"]
+```
+    
 **Observation:** In this particular dummy example, "Marital Status" was so highly correlated with the target variable that it created a perfectly pure tree in just one split. This highlights how effective decision trees can be at finding strong relationships in data.
 
 **If any of the branches (e.g., if "Single" had mixed "Yes" and "No" outcomes) were not pure, the algorithm would recursively apply the same steps:**
